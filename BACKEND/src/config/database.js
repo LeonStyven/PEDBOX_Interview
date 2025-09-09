@@ -18,11 +18,12 @@ const sequelize = new Sequelize(
 const connectDB = async () => {
     try {
         await sequelize.authenticate();
-        console.log(`Base de datos conectada a ${process.env.DB_NAME}`);
+        console.log(`DB Conected to ${process.env.DB_NAME}`);
     } catch (error) {
-        console.error(`Error al conectar a la base de datos: ${error}`);
+        console.error(`DB Conection failed: ${error}`);
         process.exit(1);
     }
   };
 
-export default connectDB
+export { sequelize, connectDB };
+export default connectDB;

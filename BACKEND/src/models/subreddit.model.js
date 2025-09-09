@@ -1,9 +1,11 @@
 import { DataTypes } from "sequelize";
+import { sequelize } from "../config/database.js";
+
 
 const Subreddit = sequelize.define("Subreddit", {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    reddit_id: {type: DataTypes.STRING, unique: true},
-    display_name_prefixed: {type: DataTypes.STRING},
+    subreddit_id: {type: DataTypes.STRING, unique: true},
+    display_name: {type: DataTypes.STRING},
     title: {type: DataTypes.STRING},
     subscribers: {type: DataTypes.INTEGER},
     createdAt: {type: DataTypes.INTEGER},
