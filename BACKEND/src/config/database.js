@@ -15,16 +15,14 @@ const sequelize = new Sequelize(
     }
 );
 
-const conectDB = async () => {
+const connectDB = async () => {
     try {
         await sequelize.authenticate();
         console.log(`Base de datos conectada a ${process.env.DB_NAME}`);
-        const PORT = process.env.PORT;
-        app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
     } catch (error) {
         console.error(`Error al conectar a la base de datos: ${error}`);
         process.exit(1);
     }
   };
 
-export default sequelize;
+export default connectDB
