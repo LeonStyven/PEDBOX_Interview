@@ -38,6 +38,10 @@ export class SubredditsPageComponent {
     return list.filter(s => s.name.toLowerCase().includes(term));
   });
 
+  updateSubreddits() {
+    this.SubredditService.updateSubreddits();
+  }
+
   onOpenDetails(_sub: Subreddit) {
     this.selected = _sub;
     this.modal?.open();

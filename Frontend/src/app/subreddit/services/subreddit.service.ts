@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subreddit } from '../interfaces/subreddit.interface';
 import { RESTSubreddit } from '../interfaces/RESTSubreddit.interface';
 import { map, Observable } from 'rxjs';
@@ -24,8 +24,8 @@ export class SubredditService {
   }
 
 
-  updateSubreddits(){
-    this.http.put(`${API_URL}/update`, {})
+  updateSubreddits(): Observable<any>{
+  return this.http.put(`${API_URL}/update`, {});
   }
 
 
