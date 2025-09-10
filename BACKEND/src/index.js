@@ -13,15 +13,18 @@ app.use(cors({
 app.use(express.json());
 app.use("/api", subredditRouter);
 
-try {
-    connectDB();
+const startServer = async () => {
+    try {
+        await connectDB();
 
-    app.listen(process.env.PORT, () => {
-        console.log(`Server is running on port ${process.env.PORT}`);
-    });
+        app.listen(process.env.PORT, () => {
+            console.log(`Server is running on port ${process.env.PORT}`);
+        });
 
-
-} catch (error) {
-    console.error(`API initialize error: `, error);
+    } catch (error) {
+        console.error(`API initialize error: `, error);
         process.exit(1);
-}
+    }
+};
+
+startServer();
