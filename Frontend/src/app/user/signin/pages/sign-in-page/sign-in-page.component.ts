@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AccessService } from '../../../services/access.service';
+import { User } from '../../../interfaces/User.interface';
 
 @Component({
   selector: 'app-sign-in-page',
@@ -18,6 +20,7 @@ import { CommonModule } from '@angular/common';
   `]
 })
 export class SignInPageComponent {
+  private accessService = inject(AccessService);
   signInForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -29,12 +32,14 @@ export class SignInPageComponent {
   }
 
   onSubmit() {
-    if (this.signInForm.valid) {
-      console.log('Form submitted:', this.signInForm.value);
-      // Handle form submission here
-    } else {
-      console.log('Form is invalid');
-    }
+    if (!this.signInForm.valid) return;
+
+    const obj: User = {
+      name: this.signInForm.value.name,
+      email: this.signInForm.value.email,
+      password: this.signInForm.value.password,
+    };
+    this.accessService.register(obj).subscribe();
   }
 
   getFieldError(fieldName: string): string {
