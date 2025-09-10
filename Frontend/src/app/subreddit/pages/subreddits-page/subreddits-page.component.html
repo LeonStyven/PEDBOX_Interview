@@ -1,5 +1,5 @@
 <subreddit-list
-    [subreddits]="subredditResource.value() ?? []"
+    [subreddits]="filteredSubreddits()"
     [errorMessage]="subredditResource.error()"    
     [isEmpty]="subredditResource.value()?.length === 0"
     [isLoading]="subredditResource.isLoading()"
