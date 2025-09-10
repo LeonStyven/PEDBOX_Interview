@@ -66,7 +66,7 @@ export const updateSubreddits = async (req, res) => {
             }
         }
 
-        // Update cache with new data
+
         const updatedSubreddits = await Subreddit.findAll();
         subredditsCache = updatedSubreddits;
 
