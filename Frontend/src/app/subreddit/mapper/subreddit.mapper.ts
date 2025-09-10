@@ -5,7 +5,7 @@ export class SubredditMapper {
     
     static mapRESTSubredditToSubreddit(item: RESTSubreddit): Subreddit{
         return{
-            name: item.name,
+            name: item.display_name,
             title: item.title,
             subscribers: item.subscribers,
             createdAt: item.createdAt,

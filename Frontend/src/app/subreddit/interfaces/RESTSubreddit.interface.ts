@@ -1,5 +1,5 @@
 export interface RESTSubreddit {
-    name: string,
+    display_name: string,
     title: string,
     subscribers: number,
     createdAt: number,
