@@ -61,16 +61,16 @@ cd PEDBOX_Interview
 
     ```env
     PORT=4000
-    DB_HOST=localhost
+    DB_HOST=bzjupsu39zat3qpsstxd-mysql.services.clever-cloud.com
     DB_PORT=3306
-    DB_USER=root
-    DB_PASS=tu_password
-    DB_NAME=reddit_db
+    DB_USER=u5ovhdqgq8ujxfsm
+    DB_PASS=w5w234CvbmfPcL2XR40f
+    DB_NAME=bzjupsu39zat3qpsstxd
     JWT_SECRET=PEDBOX_INTERVIEW_JWT_SECRET
     JWT_EXPIRES_IN=1h
     REDDIT_API=https://www.reddit.com/subreddits/popular.json
     ```
-    "Para fin de la prueba, la contraseña es: 18121927a"
+    "Publico estos datos de forma publica ya son necesarios para la revisión de la prueba"
 
 4. Inicia el servidor:
 
