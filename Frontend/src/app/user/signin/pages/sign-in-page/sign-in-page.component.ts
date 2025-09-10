@@ -3,10 +3,11 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { AccessService } from '../../../services/access.service';
 import { User } from '../../../interfaces/User.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-page',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './sign-in-page.component.html',
   styles: [`
     input::placeholder {
