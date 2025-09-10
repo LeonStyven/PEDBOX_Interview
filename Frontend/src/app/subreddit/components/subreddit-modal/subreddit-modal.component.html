@@ -1,7 +1,42 @@
 <dialog #dlg class="modal">
   <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC or click close</p>
+    @if (selectedSubreddit) {
+      <h3 class="text-lg font-bold">/{{ selectedSubreddit.name }}</h3>
+      <div class="py-4 space-y-2">
+        <div>
+          <span class="font-semibold">Title:</span>
+          <span>{{ selectedSubreddit.title }}</span>
+        </div>
+        <div>
+          <span class="font-semibold">Subscribers:</span>
+          <span>{{ selectedSubreddit.subscribers | number }}</span>
+        </div>
+        <div>
+          <span class="font-semibold">Created:</span>
+          <span>{{ selectedSubreddit.createdAt }}</span>
+        </div>
+        <div>
+          <span class="font-semibold">NSFW:</span>
+          <span>
+            @if (selectedSubreddit.over18) { Sí } @else { No }
+          </span>
+        </div>
+        <div>
+          <span class="font-semibold">Language:</span>
+          <span class="badge badge-neutral">{{ selectedSubreddit.lang.toUpperCase() }}</span>
+        </div>
+        <div>
+          <span class="font-semibold">Submit text:</span>
+          <p class="mt-1 whitespace-pre-line">{{ selectedSubreddit.submit_text }}</p>
+        </div>
+        <div>
+          <span class="font-semibold">Description:</span>
+          <p class="mt-1 whitespace-pre-line">{{ selectedSubreddit.description }}</p>
+        </div>
+      </div>
+    } @else {
+      <p class="py-4">Sin datos</p>
+    }
     <div class="modal-action">
       <form method="dialog">
         <button class="btn">Close</button>

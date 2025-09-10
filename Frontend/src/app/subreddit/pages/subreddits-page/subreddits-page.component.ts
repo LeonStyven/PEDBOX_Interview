@@ -26,6 +26,7 @@ export class SubredditsPageComponent {
   })
 
   onOpenDetails(_sub: Subreddit) {
+    this.modal.selectedSubreddit = _sub;
     this.modal?.open();
   }
 
