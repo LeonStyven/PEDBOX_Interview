@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { AccessService } from './../../../services/access.service';
 import { UserLogin } from '../../interfaces/user-login-interface';
 
@@ -21,6 +22,7 @@ import { UserLogin } from '../../interfaces/user-login-interface';
 })
 export class LogInPageComponent {
   private accessService = inject(AccessService)
+  private router = inject(Router);
   logInForm: FormGroup;
 
 
@@ -38,7 +40,17 @@ export class LogInPageComponent {
       email: this.logInForm.value.email,
       password: this.logInForm.value.password,
     };
-    this.accessService.login(obj).subscribe();
+    this.accessService.login(obj).subscribe({
+      next:(data)=>{
+        if(data.isSuccess){
+          localStorage.setItem("token", data.token)
+          this.router.navigate(['subreddits'])
+        }
+        else{
+          alert(data.message)
+        }
+      }
+    });
   }
 
   getFieldError(fieldName: string): string {
