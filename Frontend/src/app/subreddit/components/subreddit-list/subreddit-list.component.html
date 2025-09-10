@@ -16,10 +16,12 @@
                 <tr>
                     <td>{{ index + 1 }}</td>
                     <td>/{{ subreddit.name }}</td>
-                    <span class="badge badge-ghost py-5">
-                        <i class="fa-solid fa-user"></i>
-                        <td> {{ subreddit.subscribers | number}}</td>
-                    </span>
+                    <td>
+                        <span class="badge badge-ghost py-5">
+                            <i class="fa-solid fa-user"></i>
+                            {{ subreddit.subscribers | number}}
+                        </span>
+                    </td>
                     <td>{{ subreddit.submit_text }}</td>
                     <td>
                         @if (subreddit.over18 === true) {
