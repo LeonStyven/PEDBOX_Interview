@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { SubredditsPageComponent } from './subreddit/pages/subreddits-page/subreddits-page.component';
 import { SignInPageComponent } from './user/signin/pages/sign-in-page/sign-in-page.component';
+import { LogInPageComponent } from './user/login/pages/log-in-page/log-in-page.component';
 
 export const routes: Routes = [
     {
@@ -15,8 +16,12 @@ export const routes: Routes = [
             component: SignInPageComponent
           },
           {
+            path: 'login',
+            component: LogInPageComponent
+          },
+          {
             path: '',
-            redirectTo: 'signin',
+            redirectTo: 'login',
             pathMatch: 'full'
           }
         ]

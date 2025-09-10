@@ -2,6 +2,7 @@ import { inject, Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../interfaces/User.interface"
+import { UserLogin } from "../login/interfaces/user-login-interface";
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +16,11 @@ export class AccessService {
 
     register(user: User): Observable<any> {
         const url = `${this.API_URL}auth/signin`;
+        return this.http.post<any>(url, user);
+    }
+
+    login(user: UserLogin): Observable<any>{
+        const url = `${this.API_URL}auth/login`; 
         return this.http.post<any>(url, user);
     }
 }
