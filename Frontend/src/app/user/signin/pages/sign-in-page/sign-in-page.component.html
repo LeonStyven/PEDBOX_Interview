@@ -14,7 +14,9 @@
           formControlName="name"
           [class.input-error]="signInForm.get('name')?.invalid && signInForm.get('name')?.touched"
         />
-        <div class="error-message" *ngIf="getFieldError('name')">{{ getFieldError('name') }}</div>
+        @if (getFieldError('name')) {
+          <div class="error-message">{{ getFieldError('name') }}</div>
+        }
 
         <label class="label">Email</label>
         <input 
@@ -24,7 +26,9 @@
           formControlName="email"
           [class.input-error]="signInForm.get('email')?.invalid && signInForm.get('email')?.touched"
         />
-        <div class="error-message" *ngIf="getFieldError('email')">{{ getFieldError('email') }}</div>
+        @if (getFieldError('email')) {
+          <div class="error-message">{{ getFieldError('email') }}</div>
+        }
       
         <label class="label">Password</label>
         <input 
@@ -34,7 +38,9 @@
           formControlName="password"
           [class.input-error]="signInForm.get('password')?.invalid && signInForm.get('password')?.touched"
         />
-        <div class="error-message" *ngIf="getFieldError('password')">{{ getFieldError('password') }}</div>
+        @if (getFieldError('password')) {
+          <div class="error-message">{{ getFieldError('password') }}</div>
+        }
       
         <button type="submit" class="btn btn-neutral mt-4" [disabled]="signInForm.invalid">
           Let's Start <i class="fa-solid fa-rocket"></i>

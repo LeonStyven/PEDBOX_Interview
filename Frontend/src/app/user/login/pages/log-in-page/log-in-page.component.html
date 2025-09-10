@@ -15,7 +15,9 @@
             formControlName="email"
             [class.input-error]="logInForm.get('email')?.invalid && logInForm.get('email')?.touched"
           />
-          <div class="error-message" *ngIf="getFieldError('email')">{{ getFieldError('email') }}</div>
+          @if (getFieldError('email')) {
+            <div class="error-message">{{ getFieldError('email') }}</div>
+          }
         
           <label class="label">Password</label>
           <input 
@@ -25,7 +27,9 @@
             formControlName="password"
             [class.input-error]="logInForm.get('password')?.invalid && logInForm.get('password')?.touched"
           />
-          <div class="error-message" *ngIf="getFieldError('password')">{{ getFieldError('password') }}</div>
+          @if (getFieldError('password')) {
+            <div class="error-message">{{ getFieldError('password') }}</div>
+          }
         
           <button type="submit" class="btn btn-neutral mt-4" [disabled]="logInForm.invalid">
             Log In <i class="fa-solid fa-rocket"></i>
