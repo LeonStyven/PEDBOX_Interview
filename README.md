@@ -125,7 +125,7 @@ El frontend estará disponible en `http://localhost:4200`.
 
 ## 📝 Notas
 
-- La base de datos debe estar creada y accesible antes de iniciar el backend.
+- La base de datos se encuentra alojada en CleverCloud, por lo que no es necesario instanciarla localmente
 - Puedes modificar los valores del archivo `.env` según tu entorno local.
 - El frontend y backend están desacoplados y pueden ejecutarse por separado.
 
