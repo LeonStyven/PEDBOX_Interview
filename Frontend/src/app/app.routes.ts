@@ -4,8 +4,16 @@ import { SubredditsPageComponent } from './subreddit/pages/subreddits-page/subre
 export const routes: Routes = [
 
     {
+        path: '',
+        component: SubredditsPageComponent
+    },
+    {
         path: 'subreddits',
         component: SubredditsPageComponent
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
 
 ];
