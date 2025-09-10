@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Subreddit } from '../../interfaces/subreddit.interface';
 import { DecimalPipe } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { DecimalPipe } from '@angular/common';
 export class SubredditModalComponent {
   @ViewChild('dlg') dialogRef!: ElementRef<HTMLDialogElement>;
 
-  selectedSubreddit?: Subreddit;
+  @Input() subreddit?: Subreddit;
 
   open(): void {
     this.dialogRef?.nativeElement?.showModal?.();

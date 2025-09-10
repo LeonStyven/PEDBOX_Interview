@@ -1,37 +1,37 @@
 <dialog #dlg class="modal">
   <div class="modal-box">
-    @if (selectedSubreddit) {
-      <h3 class="text-lg font-bold">/{{ selectedSubreddit.name }}</h3>
+    @if (subreddit) {
+      <h3 class="text-lg font-bold">/{{ subreddit.name }}</h3>
       <div class="py-4 space-y-2">
         <div>
           <span class="font-semibold">Title:</span>
-          <span>{{ selectedSubreddit.title }}</span>
+          <span>{{ subreddit.title }}</span>
         </div>
         <div>
           <span class="font-semibold">Subscribers:</span>
-          <span>{{ selectedSubreddit.subscribers | number }}</span>
+          <span>{{ subreddit.subscribers | number }}</span>
         </div>
         <div>
           <span class="font-semibold">Created:</span>
-          <span>{{ selectedSubreddit.createdAt }}</span>
+          <span>{{ subreddit.createdAt }}</span>
         </div>
         <div>
           <span class="font-semibold">NSFW:</span>
           <span>
-            @if (selectedSubreddit.over18) { Sí } @else { No }
+            @if (subreddit.over18) { Sí } @else { No }
           </span>
         </div>
         <div>
           <span class="font-semibold">Language:</span>
-          <span class="badge badge-neutral">{{ selectedSubreddit.lang.toUpperCase() }}</span>
+          <span class="badge badge-neutral">{{ subreddit.lang.toUpperCase() }}</span>
         </div>
         <div>
           <span class="font-semibold">Submit text:</span>
-          <p class="mt-1 whitespace-pre-line">{{ selectedSubreddit.submit_text }}</p>
+          <p class="mt-1 whitespace-pre-line">{{ subreddit.submit_text }}</p>
         </div>
         <div>
           <span class="font-semibold">Description:</span>
-          <p class="mt-1 whitespace-pre-line">{{ selectedSubreddit.description }}</p>
+          <p class="mt-1 whitespace-pre-line">{{ subreddit.description }}</p>
         </div>
       </div>
     } @else {

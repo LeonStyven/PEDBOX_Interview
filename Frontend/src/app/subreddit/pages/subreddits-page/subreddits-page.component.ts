@@ -15,6 +15,7 @@ export class SubredditsPageComponent {
   SubredditService = inject(SubredditService);
 
   @ViewChild(SubredditModalComponent) modal!: SubredditModalComponent;
+  selected?: Subreddit;
 
   subredditResource = resource({
     params: () => ({}),
@@ -26,7 +27,7 @@ export class SubredditsPageComponent {
   })
 
   onOpenDetails(_sub: Subreddit) {
-    this.modal.selectedSubreddit = _sub;
+    this.selected = _sub;
     this.modal?.open();
   }
 
