@@ -9,7 +9,7 @@ export class SubredditMapper {
             title: item.title,
             subscribers: item.subscribers,
             createdAt: item.createdAt,
-            submit_text: item.submit_text,
+            submit_text: item.submit_text || "No description",
             over18: item.over18,
             description: item.description,
             lang: item.lang

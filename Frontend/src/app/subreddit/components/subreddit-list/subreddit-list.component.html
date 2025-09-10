@@ -1,0 +1,46 @@
+<section class="mt-5">
+    <table class="table table-md mt-2 w-full">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Subscribers</th>
+                <th>Resume</th>
+                <th>NSFW</th>
+                <th>Lang</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (subreddit of subreddits(); track subreddit.name; let index = $index) {
+                <tr>
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ subreddit.name }}</td>
+                    <span class="badge badge-ghost">
+                        <td> {{ subreddit.subscribers | number}}</td>
+                    </span>
+                    <td>{{ subreddit.submit_text }}</td>
+                    <td>
+                        @if (subreddit.over18 === true) {
+                            <div class="badge badge-dash badge-error">+18</div>
+                        }@else{
+                            <div class="badge badge-dash badge-info">No</div>
+                        }
+                    </td>
+                    <td>
+                        <div class="badge badge-ghost">{{ subreddit.lang }}</div>
+                    </td>
+                    <td>
+                        <button class="btn h-auto p-1">
+                            <a 
+                            class="cursor-pointer box-content">
+                            Más Informacion <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                        </button>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
