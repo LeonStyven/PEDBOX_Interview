@@ -3,4 +3,7 @@
     [errorMessage]="subredditResource.error()"    
     [isEmpty]="subredditResource.value()?.length === 0"
     [isLoading]="subredditResource.isLoading()"
+    (openDetails)="onOpenDetails($event)"
 />
+
+<subreddit-modal />

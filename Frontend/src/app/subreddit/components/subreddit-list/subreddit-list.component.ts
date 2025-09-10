@@ -1,6 +1,6 @@
 import { DecimalPipe } from '@angular/common';
 import { Subreddit } from './../../interfaces/subreddit.interface';
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 
 
 @Component({
@@ -15,4 +15,5 @@ export class SubredditListComponent {
   isLoading = input<boolean>(false)
   isEmpty = input<boolean>(false)
 
+  @Output() openDetails = new EventEmitter<Subreddit>();
 }

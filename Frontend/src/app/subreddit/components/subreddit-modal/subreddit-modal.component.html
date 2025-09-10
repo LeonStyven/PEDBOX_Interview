@@ -1,11 +1,11 @@
-<!-- Trigger button to open the checkbox-controlled modal -->
-<label for="my_modal_7" class="btn">Open modal</label>
-
-<input type="checkbox" id="my_modal_7" class="modal-toggle" />
-<div class="modal" role="dialog">
+<dialog #dlg class="modal">
   <div class="modal-box">
     <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">This modal works with a hidden checkbox!</p>
+    <p class="py-4">Press ESC or click close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
   </div>
-  <label class="modal-backdrop" for="my_modal_7">Close</label>
-</div>
+</dialog>

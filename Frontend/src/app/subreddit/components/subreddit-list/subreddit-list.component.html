@@ -32,14 +32,10 @@
                         <div class="badge badge-neutral">{{ subreddit.lang.toUpperCase() }}</div>
                     </td>
                     <td>
-                        <button class="btn h-auto p-1 flex px-4">
-                            <a 
-                            class="cursor-pointer box-content">
-                            Más Informacion 
-                            </a>
+                        <button class="btn h-auto p-1 flex px-4" (click)="openDetails.emit(subreddit)">
+                            <a class="cursor-pointer box-content">Más Informacion</a>
                             <i class="fa-solid fa-up-right-from-square"></i>
                         </button>
-                        
                     </td>
                 </tr>
             }
