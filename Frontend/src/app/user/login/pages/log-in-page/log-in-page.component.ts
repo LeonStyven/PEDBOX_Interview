@@ -31,7 +31,7 @@ export class LogInPageComponent {
     });
   }
 
-  obSubmit() {
+  onSubmit() {
     if(!this.logInForm.valid) return;
 
     const obj: UserLogin ={
