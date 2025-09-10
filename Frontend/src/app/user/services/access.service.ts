@@ -14,7 +14,7 @@ export class AccessService {
     constructor() { }
 
     register(user: User): Observable<any> {
-        const url = `${this.API_URL}api/auth/register`;
+        const url = `${this.API_URL}/auth/register`;
         return this.http.post<any>(url, user);
     }
 }
