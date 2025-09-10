@@ -7,6 +7,8 @@ Este repositorio contiene la solución para la prueba técnica de PEDBOX, desarr
 
 El objetivo principal es gestionar usuarios y subreddits, incluyendo autenticación con **JWT** y consumo de datos desde la API pública de Reddit.
 
+Al final encontrará un listado de elementos que tendría en cuenta para una próxima iteración de este proyecto.
+
 ---
 
 ## 📦 Estructura del Proyecto
@@ -128,6 +130,19 @@ El frontend estará disponible en `http://localhost:4200`.
 - La base de datos se encuentra alojada en CleverCloud, por lo que no es necesario instanciarla localmente
 - Puedes modificar los valores del archivo `.env` según tu entorno local.
 - El frontend y backend están desacoplados y pueden ejecutarse por separado.
+
+---
+
+## 💕 Mejoras
+
+- Enviaría el Token del usuario a la hora de realizar peticiones al Backend, eso me aseguraría conservar cierta seguridad
+- Modificaría la barra de busqueda para que solo fuera visible una vez el usuario se encuentre loggeado
+- Animaría el spinner del botón de actualizar o generaría algún alert al usuario para obtenga un feedback
+- Mejoraría la forma en la que se ven los detalles de los subreddits
+- Incluiría información del subreddit como la fecha de creación
+- Implementaría un caché de busqueda para evitar repetir consultas
+
+Todos estos cambios y otros más podrían ser una siguiente versión de este proyecto
 
 ---
 
