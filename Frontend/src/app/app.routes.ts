@@ -3,22 +3,31 @@ import { SubredditsPageComponent } from './subreddit/pages/subreddits-page/subre
 import { SignInPageComponent } from './user/signin/pages/sign-in-page/sign-in-page.component';
 
 export const routes: Routes = [
-
     {
-        path: '',
-        component: SubredditsPageComponent
+      path: 'subreddits',
+      component: SubredditsPageComponent
     },
     {
-        path: 'subreddits',
-        component: SubredditsPageComponent
+        path: 'auth',
+        children: [
+          {
+            path: 'signin',
+            component: SignInPageComponent
+          },
+          {
+            path: '',
+            redirectTo: 'signin',
+            pathMatch: 'full'
+          }
+        ]
+      },
+    {
+      path: '',
+      redirectTo: 'auth',
+      pathMatch: 'full'
     },
     {
-        path: 'signin',
-        component: SignInPageComponent
-    },
-    {
-        path: '**',
-        redirectTo: ''
+      path: '**',
+      redirectTo: 'auth'
     }
-
-];
+  ];

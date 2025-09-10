@@ -3,6 +3,7 @@ import express from "express"; // to create the server
 import cors from "cors"; // to handle the cors policy
 import connectDB from "./config/database.js";
 import subredditRouter from "./routes/subreddit.routes.js";
+import authRouter from "./routes/auth.routes.js";
 
 dotenv.config();
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use("/api", subredditRouter);
+app.use("/auth", authRouter);
 
 const startServer = async () => {
     try {
